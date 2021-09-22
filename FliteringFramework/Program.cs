@@ -14,12 +14,12 @@ namespace FilteringFramework
             people.Add(new Person("Kasper", 26, false));
             people.Add(new Person("Sigurd", 26, true));
 
-            //Name filter
+            //Filtering
             PersonFilter nameFilter = new NameFilter("Sigurd");
             PersonFilter ageFilter = new AgeFilter(26, 26);
             AndFilter andFilter = new AndFilter(ageFilter, nameFilter);
-            List<Person> filteredByNotName = andFilter.Filter(people);
-            filteredByNotName.ForEach(person => Console.WriteLine(person.Name));
+            List<Person> filteredByAgeAndName = andFilter.Filter(people);
+            filteredByAgeAndName.ForEach(person => Console.WriteLine(person.Name));
         }
     }
 }
