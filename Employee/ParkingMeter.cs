@@ -1,4 +1,6 @@
-﻿namespace OOP
+﻿using System;
+
+namespace OOP
 {
     public class ParkingMeter
     {

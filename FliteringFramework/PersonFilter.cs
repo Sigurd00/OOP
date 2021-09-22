@@ -1,4 +1,6 @@
-﻿namespace FilteringFramework
+﻿using System.Collections.Generic;
+
+namespace FilteringFramework
 {
     public abstract class PersonFilter
     {

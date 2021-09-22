@@ -1,4 +1,7 @@
-﻿namespace Lektion1
+﻿using System;
+using System.Collections.Generic;
+
+namespace Lektion1
 {
     public class Program
     {

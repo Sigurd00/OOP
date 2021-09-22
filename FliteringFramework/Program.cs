@@ -1,4 +1,7 @@
-﻿namespace FilteringFramework
+﻿using System;
+using System.Collections.Generic;
+
+namespace FilteringFramework
 {
     public class Program
     {
@@ -13,8 +16,9 @@
 
             //Name filter
             PersonFilter nameFilter = new NameFilter("Sigurd");
-            NotFilter notNameFilter = new NotFilter(nameFilter);
-            List<Person> filteredByNotName = notNameFilter.Filter(people);
+            PersonFilter ageFilter = new AgeFilter(26, 26);
+            AndFilter andFilter = new AndFilter(ageFilter, nameFilter);
+            List<Person> filteredByNotName = andFilter.Filter(people);
             filteredByNotName.ForEach(person => Console.WriteLine(person.Name));
         }
     }
