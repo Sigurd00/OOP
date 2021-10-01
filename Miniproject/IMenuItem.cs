@@ -1,0 +1,7 @@
+﻿namespace Miniproject
+{
+    interface IMenuItem
+    {
+
+    }
+}
