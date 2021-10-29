@@ -5,7 +5,7 @@
         public string Title { get; set; }
         private bool _running { get; set; }
         private List<MenuItem> _menuItems { get; set; }
-        private MenuItem? _selectedItem { get; set; }
+        private MenuItem _selectedItem { get; set; }
         private int _selectedItemIndex {  get; set; }
 
         public Menu(string title)
@@ -22,8 +22,8 @@
         
         public void Start()
         {
-            _running = true;
             _selectedItem = _menuItems[_selectedItemIndex];
+            _running = true;
             Console.CursorVisible = false;
             do
             {
@@ -46,6 +46,9 @@
                     break;
                 case ConsoleKey.DownArrow:
                     MoveDown();
+                    break;
+                case ConsoleKey.Enter:
+                    _selectedItem.Select();
                     break;
                 default:
                     break;
@@ -91,6 +94,7 @@
                 if (menuItem == _selectedItem)
                 {
                     ConsoleWriteSelectedItem(menuItem.Title);
+
                 }
                 else
                 {

@@ -15,6 +15,7 @@ namespace Miniproject
 
         public void Select()
         {
+            Console.WriteLine(Content);
         }
     }
 }
